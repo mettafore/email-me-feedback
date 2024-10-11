@@ -14,3 +14,10 @@ class Form1(Form1Template):
   def Generate_click(self, **event_args):
     """This method is called when the button is clicked"""
     pass
+
+  def submit_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    alert("You clicked the button!")
+    name = self.name_box.text
+    email = self.email_box.text
+    feedback = self.feedback_area.text

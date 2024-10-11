@@ -13,7 +13,7 @@ import anvil.server
 #   print("Hello, " + name + "!")
 #   return 42
 #
-
+@anvil.server.callable
 def send_feedback(name,email, feedback):
   anvil.email.send(to='noreply@anvil.works',
                    subject="Feedback from {name}",
