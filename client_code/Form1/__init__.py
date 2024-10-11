@@ -1,5 +1,8 @@
 from ._anvil_designer import Form1Template
 from anvil import *
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
 import anvil.server
 
 
@@ -21,3 +24,13 @@ class Form1(Form1Template):
     name = self.name_box.text
     email = self.email_box.text
     feedback = self.feedback_area.text
+    recommendation = self.recommend_dropdown.selected_value
+    anvil.server.call('send_feedback', name, email, feedback, recommendation)
+    Notification("Feedback Submitted!").show()
+    self.clear_inputs()
+
+  def clear_inputs(self):
+    self.name_box.text = ''
+    self.email_box.text = ''
+    self.feedback_area.text = ''
+    self.recommend_dropdown.selected_value = None
