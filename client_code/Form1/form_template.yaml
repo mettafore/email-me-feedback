@@ -1,7 +1,7 @@
 components:
 - components:
   - components:
-    - layout_properties: {grid_position: 'TFTQWG,HMGRGJ'}
+    - layout_properties: {full_width_row: false, grid_position: 'TFTQWG,HMGRGJ'}
       name: label_1
       properties: {text: Feedback Form}
       type: Label
